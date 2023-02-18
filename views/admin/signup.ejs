@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up page</title>
+</head>
+<body>
+    <% if (success && success.length > 0) { %>
+        <div class="alert alert-success" style="text-align: center;"><%= success %></div>
+      <% } %>
+      <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger" style="text-align: center;"><%= error %></div>
+      <% } %>
+  
+    <h1 style="text-align: center;">Create Account</h1>
+    <form action="/admin/signup" method="post">
+        <div style="text-align: center">
+            <div>
+                <label for="AdminName">Admin Name</label>
+                <br>
+                <input type="text" id="AdminName" name="AdminName" placeholder="Admin Name">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email</label>
+                <br>
+                <input type="text" id="email" name="email" placeholder="Admin email">
+            </div> 
+            <br>
+            <div>
+                <label for="password">Password</label>
+                <br>
+                <input type="text" id="password" name="password" placeholder="password">
+            </div> 
+            <br>
+            
+            <br> 
+            <div>
+                <button>Submit</button>
+            </div>           
+ 
+        </div>
+    
+    </form>
+    <br>
+   <div class="container">
+    <label for="">Already Have an account?</label>
+    <a href="/admint/login">Sign Up </a>
+   </div>
+</body>
+</html>
+
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 500 px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  background-color: rgb(248, 242, 242);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+input[type="number"],
+input[type="password"] {
+  width: 15%;
+  padding: 5px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+button[type="submit"] {
+  width: 10%;
+  padding: 10px;
+  font-size: 1.9em;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(132, 132, 156);
+  color: white;
+  cursor: pointer;
+}
+
+</style>

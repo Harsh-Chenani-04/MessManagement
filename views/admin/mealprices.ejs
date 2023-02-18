@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Meal Price</title>
+</head>
+
+<body>
+    <% if (success && success.length > 0) { %>
+        <div class="alert alert-success" style="text-align: center;"><%= success %></div>
+      <% } %>
+      <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger" style="text-align: center;"><%= error %></div>
+      <% } %>
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin/home">
+                Home
+            </a>
+        </div>
+    </nav>  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+
+    <h4 class="page-title">Hello Admin</h4>
+
+    <div class="card bg-dark text-white card-check" style="width: 22rem; margin-left: 38%; margin-top: 6%;">
+        <div class="card-img-overlay">
+            <h2 style="text-align: center; color: black;">Meal Prices</h2>
+            <br>
+            <ul style="text-align: center; color: black;">
+                <li>Breakfast: <%= mealprice.bf  %></li>
+                <li>Lunch: <%= mealprice.lunch  %></li>
+                <li>Dinner: <%= mealprice.dinner  %></li>
+            </ul>
+            <div class="mt-3">
+                <a href="/admin/mealprice/edit" class="btn btn-primary me-2">Edit</a>
+                <a href="/admin/home" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+<script type="text/javascript">
+    function openTab(th) {
+        window.open(th.name, '_blank');
+    }
+</script>
+<style>
+    .navbar-brand {
+        color: aliceblue;
+    }
+
+    .navbar-logout {
+        color: rgb(68, 114, 155);
+    }
+
+    .navbar {
+        background-color: #3E8ED0;
+    }
+
+    .page-title {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    .container-fluid {
+        margin-left: 8%;
+        margin-right: 7%;
+        color: aliceblue;
+    }
+
+    body {
+        background-image: url("https://media.istockphoto.com/photos/assorted-indian-recipes-food-various-picture-id922783734?k=20&m=922783734&s=612x612&w=0&h=_oV4oOrb8kC4RVgAI6RrGfQ8lIKsnP89lwwjHfhxUzQ=");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(255, 255, 255, 0.5);
+        background-blend-mode: soft-light;
+    }
+
+    .update-time {
+        margin-top: 35%;
+    }
+
+</style>
+
+</html>

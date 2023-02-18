@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title> Mess Menu</title>
+</head>
+
+<body>
+    <nav class="navbar ">
+        <!-- navbar-light bg-light -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin/home">
+                Home
+            </a>
+        </div>
+    </nav>
+
+    <h4 class="page-title">Mess Menu</h4>
+
+
+    <div class="row" style="margin-top:3%; margin-left: 20%; text-align: center;">
+        <div class="col-sm-6000 ">
+            <div class="card" style=" border-color: black; width: 25em; text-align: center;">
+                <div class="card-body card-img-overlay" style="text-align: center;">
+                    <form action="/admin/messmenu" method="post">
+                        <% messmenu.forEach(function(menuItem) { %>
+                            <h3><%= menuItem.day %></h3>
+                            <label >Breakfast</label><br>
+                            <input type="text" name="b1" value="<%= menuItem.b1 %>">
+                            <input type="text" name="b2" value="<%= menuItem.b2 %>">
+                            <input type="text" name="b3" value="<%= menuItem.b3 %>">
+                            <br>
+                            <label>Lunch</label><br>
+                            <input type="text" name="l1" value="<%= menuItem.l1 %>">
+                            <input type="text" name="l2" value="<%= menuItem.l2 %>">
+                            <input type="text" name="l3" value="<%= menuItem.l3 %>">
+                            <br>
+                            <label>Dinner</label><br>
+                            <input type="text" name="d1" value="<%= menuItem.d1 %>">
+                            <input type="text" name="d2" value="<%= menuItem.d2 %>">
+                            <input type="text" name="d3" value="<%= menuItem.d3 %>">
+                            <br><br>
+                          <% }); %>
+                          <br>
+                          <button class="btn btn-primary" type="submit">Update Messmenu</button>
+                          <br>
+                    </form>
+                    <br><br>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div">
+<br>
+<p style="margin-top: 200px;">
+
+</p>
+    </div>
+
+    <style>
+        .form-select {
+            width: 150px;
+        }
+        
+        .label{
+            font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+        }
+        .dateinput {
+            resize: horizontal;
+            width: 200px;
+            height: 38px;
+            margin-top: auto;
+            margin-left: 100px;
+        }
+    
+        .page-title {
+            margin-left: 47%;
+            margin-top: 2%;
+        }
+    
+        .row {
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+    
+        .navbar-brand {
+            color: aliceblue;
+        }
+    
+        .navbar {
+            background-color: #3E8ED0;
+        }
+    
+        .container-fluid {
+            margin-left: 8%;
+            margin-right: 7%;
+            color: aliceblue;
+        }
+    
+        body {
+            background-image: url("https://media.istockphoto.com/photos/assorted-indian-recipes-food-various-picture-id922783734?k=20&m=922783734&s=612x612&w=0&h=_oV4oOrb8kC4RVgAI6RrGfQ8lIKsnP89lwwjHfhxUzQ=");
+            /* background-size: auto; */
+            /* background-repeat: no-repeat; */
+            background-size:cover;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-blend-mode: soft-light;
+        }
+    </style>
+    
+
+</body>
+
+</html>

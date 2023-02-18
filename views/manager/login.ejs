@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Login Page</title>
+</head>
+<body>
+  <% if (success && success.length > 0) { %>
+    <div class="alert alert-success" style="text-align: center;"><%= success %></div>
+  <% } %>
+  <% if (error && error.length > 0) { %>
+    <div class="alert alert-danger" style="text-align: center;"><%= error %></div>
+  <% } %>
+    <h1 style="text-align: center;">Manager Login Page</h1>
+    <div style="text-align: center;">
+      <form action="/manager/login" method="post">
+        <div>
+           <div>
+               <label for="ManagerName">Enter Manager name</label>
+               <br>
+               <input type="text" id="ManagerName" name="ManagerName" placeholder="Manager Name">
+            </div>
+            <br>
+            <div>
+               <label for="password">Password</label>
+               <br>
+               <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <br>
+        <div>
+           <button class="mt-3 btn btn-primary" >Login</button>
+        </div>
+        </div>
+        
+   </form>
+        <br>
+    </div>
+    
+</body>
+</html>
+
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 500 px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  background-color: rgb(248, 242, 242);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+input[type="number"],
+input[type="password"] {
+  width: 15%;
+  padding: 5px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+button[type="submit"] {
+  width: 10%;
+  padding: 10px;
+  font-size: 1.9em;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(132, 132, 156);
+  color: white;
+  cursor: pointer;
+}
+
+</style>

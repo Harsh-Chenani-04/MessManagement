@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Complaints Review</title>
+</head>
+
+<body>
+    <% if (success && success.length > 0) { %>
+        <div class="alert alert-success" style="text-align: center;"><%= success %></div>
+      <% } %>
+      <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger" style="text-align: center;"><%= error %></div>
+      <% } %>
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/student/home">
+                Home
+            </a>
+        </div>
+    </nav>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+
+    <h4 class="page-title">Dues Table</h4>
+
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Complaint</th>
+          <th>resolved</th>
+          
+        </tr>
+        <% complaints.forEach((complaint) => { %>
+        <tr>
+          <td><%= complaint.name %></td>
+          <td><%= complaint.email %></td>
+          <td><%= complaint.complaint %></td>
+          <td><% if (complaint.resolved) { %>
+            Yes
+          <% } else { %>
+            No
+          <% } %> %></td>
+          
+        </tr>
+        <% }); %>
+      </table>
+
+
+
+</body>
+<style>
+    
+    table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th,td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+button {
+  background-color: #1f2520;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .item-name {
+        color: #395870;
+        display: block;
+        width: 275px;;
+    }
+
+    .text-offset {
+        color: #7c7c80;
+        font-size: 12px;
+    }
+
+    .item-rollnumber {
+        text-align: center;
+    }
+
+    .item-year {
+        text-align: right;
+    }
+
+    .item-multiple {
+        display: block;
+    }
+
+    tr:last-child td:first-child {
+        border-bottom-left-radius: 5px;
+    }
+
+
+    tr:last-child td:last-child {
+        border-bottom-right-radius: 5px;
+    }
+
+    .navbar-brand {
+        color: aliceblue;
+    }
+
+    .navbar-logout {
+        color: aliceblue;
+    }
+
+    .navbar {
+        background-color: #3E8ED0;
+    }
+
+    .page-title {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    .container-fluid {
+        margin-left: 8%;
+        margin-right: 7%;
+        color: aliceblue;
+    }
+
+    body {
+
+        background-image: url("https://media.istockphoto.com/photos/assorted-indian-recipes-food-various-picture-id922783734?k=20&m=922783734&s=612x612&w=0&h=_oV4oOrb8kC4RVgAI6RrGfQ8lIKsnP89lwwjHfhxUzQ=");
+
+        background-size:cover;
+        background-color: rgba(255, 255, 255, 0.5);
+        background-blend-mode: soft-light;
+    }
+</style>
+
+</html>
